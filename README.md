@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Raally (Resource allocation ally)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Raally project. Raally is an application that helps and simplifies managing people’s allocation on projects. Its purpose is to store information about people such as job title and compensation as well as information about projects and project assignments. With this information Raally can display a dashboard that shows utilization of company’s workforce. 
 
-## Available Scripts
+Raally is a multitenant SaaS application where users can belong to one or many workspaces/tenants either as Company Admin or as a Resource Manager.
 
-In the project directory, you can run:
+# Getting Started
 
-### `npm start`
+## Backend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Backend app uses NodeJs v16.15.0 and SQLite, you can add/remove any data that you want, but please don´t change the structure of the database.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Install Backend Dependencies
 
-### `npm test`
+In order to install the backend project dependencies run inside the backend folder:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> **npm** install --force
 
-### `npm run build`
+### Running Backend Application
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The following command inside the backend folder will run the backend server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> **npm** start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+After this you would be able to access backend at http://localhost:8080. 
 
-### `npm run eject`
+## Frontend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The Frontend app also uses NodeJs v16.15.0.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install Frontend Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+In order to install the backend project dependencies run inside the frontend folder:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> **npm** install --force
 
-## Learn More
+### Running Frontend Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The following command will run the SPA in local dev server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> **npm** start
 
-### Code Splitting
+The application will be available at http://localhost:8081 and by default you should see a welcome message there.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Production Build
 
-### Analyzing the Bundle Size
+In order to prepare production build you need to run in the frontend and in the backend folder the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> **npm** run build
 
-### Making a Progressive Web App
+It is important to make sure that code can be built for production succesfully before submitting the solution.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Default User Setup
 
-### Advanced Configuration
+The initial database already contains some sample data and you can access it with the following users:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+ - **username:** user1@test.com
+ - **password:** Test@123
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+ - **username:** user2@test.com
+ - **password:** Test@123
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ - **username:** user3@test.com
+ - **password:** Test@123
+
+Each user has access to different workspaces with the following roles:
+
+- user1@test.com
+  - Workspace 01 with admin role
+  - Workspace 02 with admin role
+  - Workspace 03 with admin role
+
+- user2@test.com
+  - Workspace 01 with admin role
+  - Workspace 02 with resource manager role
+
+- user3@test.com
+  - Workspace 04 with admin role
+
+
